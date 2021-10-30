@@ -23,6 +23,8 @@ Open source refers to source code that is publicly accessible and allows anyone 
 
 * Now you can search for the available issues for Hacktoberfest on this [link](https://github.com/search?q=label%3Ahacktoberfest+state%3Aopen&type=Issues) and start fixing those and contributing. 
 
+* You can add any DSA questions related to Java in the respective folder. If folder is not present, create one and add your files with proper description. 
+
 * Instructions:
 	* Simply [fork](https://github.com/AkshataABhat/Java) this repository 
 	* Pick an [issue](https://github.com/AkshataABhat/Java/issues) and fix it 
