@@ -1,18 +1,18 @@
-class TreeNode{
+import java.math.BigInteger;
+import java.util.Scanner;
+
+class TreeNode {
     TreeNode left, right;
-    int leftSize =0, rightSize=0;
-    long data, height = 0;
-    public TreeNode(long data){
+    int leftSize = 0, rightSize = 0;
+    long data, height = 1;
+
+    public TreeNode(long data) {
         this.data = data;
-        this.height = 1;
-    }
-    public TreeNode(long data, TreeNode left, TreeNode right){
-        this.data = data;
-        this.left = left;
-        this.right = right;
     }
 }
-class BinaryTree {
+
+public class BinaryTree {
+
     public static TreeNode createTree() {
         TreeNode root = null;
         Scanner sc = new Scanner(System.in);
@@ -63,7 +63,7 @@ class BinaryTree {
             return null;
         }
         int mid = (high + low) / 2;
-        TreeNode node = new TreeNode((int) nums[mid]);
+        TreeNode node = new TreeNode(nums[mid]);
         node.left = formTree(nums, low, mid - 1);
         node.right = formTree(nums, mid + 1, high);
         return node;
@@ -179,10 +179,10 @@ class BinaryTree {
         if (root != null) {
             if (root.left != null) {
                 sum += root.data;
-                leftmostSum(root.left);
+                sum += leftmostSum(root.left);
             } else if (root.right != null) {
                 sum += root.data;
-                leftmostSum(root.right);
+                sum += leftmostSum(root.right);
             }
         }
         return sum;
@@ -192,10 +192,10 @@ class BinaryTree {
         long sum = 0;
         if (root != null) {
             if (root.right != null) {
-                rightmostSum(root.right);
+                sum += rightmostSum(root.right);
                 sum += root.data;
             } else if (root.left != null) {
-                rightmostSum(root.left);
+                sum += rightmostSum(root.left);
                 sum += root.data;
             }
         }
@@ -214,11 +214,11 @@ class BinaryTree {
         return sum;
     }
 
-    boolean sameParent(TreeNode node, TreeNode a, TreeNode b) {
+    public boolean sameParent(TreeNode node, TreeNode a, TreeNode b) {
         if (node == null)
             return false;
         return ((node.left == a && node.right == b) || (node.left == b && node.right == a) || sameParent(node.left, a, b) || sameParent(node.right, a, b));
-    }                                                                                                                                                                                                                                                                      // then return true, if not then return false
+    }
 
     int treeLevel(TreeNode root, TreeNode node, int level) {
         if (root == null)
@@ -247,7 +247,7 @@ class BinaryTree {
         return root;
     }
 
-    TreeNode findLCA (TreeNode root,int node1, int node2){
+    TreeNode findLCA(TreeNode root, int node1, int node2) {
         if (root == null) return root;
         if (root.data == node1 || root.data == node2)
             return root;
