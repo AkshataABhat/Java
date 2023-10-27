@@ -3,7 +3,7 @@
 Java 
 =======
 
-Participating in the [HacktoberFest2021](https://hacktoberfest.digitalocean.com/)
+Participating in the [HacktoberFest2023](https://hacktoberfest.digitalocean.com/)
 
 ## What is Hacktoberfest ?
 
